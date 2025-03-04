@@ -10,15 +10,10 @@ sns.set(style='darkgrid')
 daily_data = pd.read_csv('./data/day_clean.csv')
 hourly_data = pd.read_csv('./data/hour_clean.csv')
 
-# Get the total count of rentals by hour
-def get_total_count_by_hourly_data(hourly_data):
-  hourly_rentals_count =  hourly_data.groupby(by="hour").agg({"cnt": ["sum"]})
-  return hourly_rentals_count
-
 # Get the total count of rentals by day
 def count_by_daily_data(daily_data):
-    daily_rentals_2011 = daily_data.query(str('date >= "2011-01-01" and date < "2012-12-31"'))
-    return daily_rentals_2011
+    daily_rentals = daily_data.query(str('date >= "2011-01-01" and date < "2012-12-31"'))
+    return daily_rentals
 
 # Get the total count of rentals by day for registered users
 def total_registered_df(daily_data):
@@ -41,16 +36,6 @@ def total_casual_df(daily_data):
         "casual": "casual_sum"
     }, inplace=True)
    return daily_casual_rentals
-
-# Get the total count of rentals by hour
-def sum_order(hourly_data):
-    hourly_total_rentals = hourly_data.groupby("hour").cnt.sum().sort_values(ascending=False).reset_index()
-    return hourly_total_rentals
-
-# Get the total count of rentals by day for each season
-def another_season(daily_data): 
-    seasonal_rentals = daily_data.groupby(by="season").cnt.sum().reset_index() 
-    return seasonal_rentals
 
 # Sorting the data by date
 datetime_columns = ["date"]
@@ -89,12 +74,9 @@ main_df_days = daily_data[(daily_data["date"] >= str(start_date)) & (daily_data[
 # Filter the data based on the date range
 main_df_hour = hourly_data[(hourly_data["date"] >= str(start_date)) & (hourly_data["date"] <= str(end_date))]
 
-hourly_rentals_count = get_total_count_by_hourly_data(main_df_hour)
-daily_rentals_2011 = count_by_daily_data(main_df_days)
+daily_rentals = count_by_daily_data(main_df_days)
 daily_registered_rentals = total_registered_df(main_df_days)
 daily_casual_rentals = total_casual_df(main_df_days)
-hourly_total_rentals = sum_order(main_df_hour)
-seasonal_rentals = another_season(main_df_hour)
 
 #Melengkapi Dashboard dengan Berbagai Visualisasi Dat
 st.header('Bike Sharing Analysis 📈')
@@ -103,7 +85,7 @@ st.subheader('Daily Sharing')
 col1, col2, col3 = st.columns(3)
  
 with col1:
-    total_orders = daily_rentals_2011.cnt.sum()
+    total_orders = daily_rentals.cnt.sum()
     st.metric("Total Sharing Bike", value=format(total_orders, ","))
 
 with col2:
