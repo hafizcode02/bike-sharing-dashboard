@@ -137,3 +137,6 @@ st.write("1. Tren Penggunaan Sepeda Rental mencapai tingkat tertinggi padapada m
 st.write("2. Tren penggunaan sepeda rental menunjukan waktu Sore hari menjadi waktu penyewaan sepeda terpadat terutama pada jam 5 sore, sedangkan pagi hari menjadi waktu penyewaan sepeda tersepi terutama pada jam 4 pagi.")
 st.write("3. Tren penggunaan sepeda tiap bulan berdasarkan jenis penyewanya (Registrasi dan Biasa) didominasi oleh user yang sudah teregistrasi di bandingkan user yang belum teregistrasi dan cenderung meningkat")
 st.write("4. Pengaruh cuaca terhadap jumlah penyewaan sepeda menunjukan kondisi cuaca yang cerah menjadi faktor utama dalam jumlah penyewaan sepeda, sedangkan kondisi cuaca yang buruk seperti hujan dan salju menjadi faktor terendah dalam jumlah penyewaan sepeda.")
+
+st.write("-------------------------------")
+st.write("Copyright : Hafiz Caniago © 2025")
