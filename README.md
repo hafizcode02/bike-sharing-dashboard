@@ -48,3 +48,7 @@ Bike Sharing Dashboard adalah aplikasi dashboard yang menampilkan data penyewaan
 ## Catatan
 
 Pastikan Anda memiliki Python dan pip terinstal di sistem Anda. Jika belum, Anda dapat mengunduh dan menginstalnya dari [python.org](https://www.python.org/).
+
+
+## Preview
+![preview](https://github.com/hafizcode02/bike-sharing-dashboard/preview.gif)
