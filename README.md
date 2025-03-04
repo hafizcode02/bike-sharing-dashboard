@@ -51,4 +51,4 @@ Pastikan Anda memiliki Python dan pip terinstal di sistem Anda. Jika belum, Anda
 
 
 ## Preview
-![preview](https://github.com/hafizcode02/bike-sharing-dashboard/preview.gif)
+![preview](https://github.com/hafizcode02/bike-sharing-dashboard/blob/main/preview.gif)
