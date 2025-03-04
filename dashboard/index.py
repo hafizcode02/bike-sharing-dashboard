@@ -7,8 +7,8 @@ import streamlit as st
 sns.set(style='darkgrid')
 
 # Load the data
-daily_data = pd.read_csv('./data/day_clean.csv')
-hourly_data = pd.read_csv('./data/hour_clean.csv')
+daily_data = pd.read_csv('./dashboard/data/day_clean.csv')
+hourly_data = pd.read_csv('./dashboard/data/hour_clean.csv')
 
 # Get the total count of rentals by day
 def count_by_daily_data(daily_data):
@@ -59,7 +59,7 @@ max_date_hourly_data = hourly_data["date"].max()
 
 # Sidebar
 with st.sidebar:
-    st.image("assets/bike-bg.jpg", width=400)
+    st.image("./dashboard/assets/bike-bg.jpg", width=400)
     
     # Mengambil start_date & end_date dari date_input
     start_date, end_date = st.date_input(
