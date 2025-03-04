@@ -36,8 +36,7 @@ Bike Sharing Dashboard adalah aplikasi dashboard yang menampilkan data penyewaan
 
 1. **Jalankan aplikasi:**
 	```sh
-    cd dashboard
-	streamlit run index.py
+	streamlit run dashboard/index.py
 	```
 
 2. **Buka browser dan akses:**
